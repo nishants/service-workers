@@ -6,7 +6,7 @@
 
 Lessons
 
-### Create Webpage
+### 01 - Create Webpage
 
 - Lets first create a webpge with some js, css and images.
 
@@ -14,7 +14,7 @@ Lessons
 
   ![image-20191020132635008](/Users/dawn/Documents/projects/service-workers/docs:images/01-create-project-audit.png)
 
-### Create and register a service worker
+### 02 - Create and register a service worker
 
 - create empty **sw.js** file at root
 
@@ -71,6 +71,50 @@ Lessons
 - Note that this time, the service worker was installed and activated once again.
 
 
+
+### 03 - Cache some files with service worker
+
+- Create a version for cache (reset after we change teh cached files later on)
+
+- And create list of first few files we want to cache
+
+  ```javascript
+  const cacheName = 'cache-v1';
+  
+  const precacheResources = [
+    '/',
+    'index.html',
+    'styles/main.css',
+  ];
+  ```
+
+  
+
+- Load the list of files into the cache on **installation** in sw.js
+
+  ```javascript
+  const cacheName = 'cache-v1';
+  
+  const precacheResources = [
+    '/',
+    'index.html',
+    'styles/main.css',
+  ];
+  
+  self.addEventListener('install', event => {
+    console.log('Service worker install event!');
+    event.waitUntil(
+      caches.open(cacheName)
+        .then(cache => {
+          return cache.addAll(precacheResources);
+        })
+    );
+  });
+  ```
+
+  
+
+- 
 
 **Note**
 
