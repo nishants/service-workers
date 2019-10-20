@@ -124,7 +124,37 @@ Lessons
 
   ![image-20191020150208666](/Users/dawn/Documents/projects/service-workers/docs/images/02-add-static-cache.png)
 
-  
+
+
+### 04 Fetch static files from cache
+
+- In this step we will fetch the static files from the cache 
+
+- On intercepting the fetch request, search for matching request in cache 
+
+  ```javascript
+  self.addEventListener('fetch', event => {
+    console.log('Fetch intercepted for:', event.request.url);
+    event.respondWith(caches.match(event.request)
+        .then(cachedResponse => {
+          if (cachedResponse) {
+            return cachedResponse;
+          }
+          return fetch(event.request);
+        })
+    );
+  });
+  ```
+
+- now reload the page and view networks tab, all our static sources must be coming from the service worker
+
+  ![image-20191020152244169](/Users/dawn/Documents/projects/service-workers/docs/images/04-fetch-from-cache.png)
+
+- Turn of the server and reload page, it must load just fine 
+
+- Now check lighthouse audit again :
+
+  ![image-20191020152645312](/Users/dawn/Documents/projects/service-workers/docs/images/04-fetch-from-cache-audit.png)
 
 **Note**
 
