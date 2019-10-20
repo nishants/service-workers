@@ -3,8 +3,8 @@ const cacheName = 'cache-v1';
 const cachedResources = [
   '/',
   'index.html',
-  // 'styles/main.css',
-  // 'images/still_life_medium.jpg'
+  'style/main.css',
+  'images/still_life_medium.jpg'
 ];
 
 self.addEventListener('install', event => {
@@ -17,7 +17,6 @@ self.addEventListener('install', event => {
   );
 });
 
-self.ad
 self.addEventListener('activate', event => {
   console.log('Service worker activate event!');
 });

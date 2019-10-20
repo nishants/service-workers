@@ -74,6 +74,10 @@ Lessons
 
 ### 03 - Cache some files with service worker
 
+- In this step, we will add some static files to cache.
+
+- Though we will **not enable offline feature in this steap**
+
 - Create a version for cache (reset after we change teh cached files later on)
 
 - And create list of first few files we want to cache
@@ -81,10 +85,11 @@ Lessons
   ```javascript
   const cacheName = 'cache-v1';
   
-  const precacheResources = [
+  const cachedResources = [
     '/',
     'index.html',
-    'styles/main.css',
+    'style/main.css',
+    'images/still_life_medium.jpg'
   ];
   ```
 
@@ -95,10 +100,11 @@ Lessons
   ```javascript
   const cacheName = 'cache-v1';
   
-  const precacheResources = [
+  const cachedResources = [
     '/',
     'index.html',
-    'styles/main.css',
+    'style/main.css',
+    'images/still_life_medium.jpg'
   ];
   
   self.addEventListener('install', event => {
@@ -114,7 +120,11 @@ Lessons
 
   
 
-- 
+- Now chech the cached files in devtools: 
+
+  ![image-20191020150208666](/Users/dawn/Documents/projects/service-workers/docs/images/02-add-static-cache.png)
+
+  
 
 **Note**
 
