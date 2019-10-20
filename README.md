@@ -1,8 +1,6 @@
 # content
 - create a a webpage with css/js/images.
--
-
-
+  
 
 Lessons
 
@@ -52,13 +50,13 @@ Lessons
 
 - Reload page to check if service worker registration works, we see following message if it succeeds 
 
-  ![image-20191020134209235](/Users/dawn/Documents/projects/service-workers/docs:images/02-sw-register-success.png)
+  ![image-20191020134209235](./docs/images/02-sw-register-success.png)
 
 
 
 - now reload the page for second time, and we see following 
 
-  ![image-20191020134654960](/Users/dawn/Library/Application Support/typora-user-images/image-20191020134654960.png)
+  ![image-20191020134654960](./docs/images/02-add-static-cache-first-relaod.png)
 
   
 
@@ -66,7 +64,7 @@ Lessons
 
 - Now lets close the page and open url again, we see following on console 
 
-  ![image-20191020134854607](/Users/dawn/Documents/projects/service-workers/docs:images/02-sw-register-open-close-again.png)
+  ![image-20191020134854607](./docs/images/02-sw-register-open-close-again.png)
 
 - Note that this time, the service worker was installed and activated once again.
 
@@ -122,7 +120,7 @@ Lessons
 
 - Now chech the cached files in devtools: 
 
-  ![image-20191020150208666](/Users/dawn/Documents/projects/service-workers/docs/images/02-add-static-cache.png)
+  ![image-20191020150208666](./docs/images/02-add-static-cache.png)
 
 
 
@@ -148,13 +146,13 @@ Lessons
 
 - now reload the page and view networks tab, all our static sources must be coming from the service worker
 
-  ![image-20191020152244169](/Users/dawn/Documents/projects/service-workers/docs/images/04-fetch-from-cache.png)
+  ![image-20191020152244169](./docs/images/04-fetch-from-cache.png)
 
 - Turn of the server and reload page, it must load just fine 
 
 - Now check lighthouse audit again :
 
-  ![image-20191020152645312](/Users/dawn/Documents/projects/service-workers/docs/images/04-fetch-from-cache-audit.png)
+  ![image-20191020152645312](./docs/images/04-fetch-from-cache-audit.png)
 
 **Note**
 
